@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Investigación de usuarios · Estaciones Virtuales CNB</title>
+  <link rel="stylesheet" href="investigacion-usuarios.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <a class="back-link" href="index.html">← Ver prototipo</a>
+      <span class="eyebrow">Herramienta para el equipo del proyecto</span>
+      <h1>Formulario de investigación de usuarios</h1>
+      <p>Define a quién sirve la estación virtual, conversa con esas personas, observa cómo la usan y convierte la evidencia en mejoras concretas.</p>
+      <div class="hero-tags"><span>1 · Planificar</span><span>2 · Escuchar</span><span>3 · Observar</span><span>4 · Priorizar</span></div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" aria-label="Navegación del formulario">
+      <strong>Recorrido</strong>
+      <a href="#publico">01 Público objetivo</a>
+      <a href="#participantes">02 A quién preguntar</a>
+      <a href="#entrevista">03 Qué preguntar</a>
+      <a href="#prueba">04 Prueba del prototipo</a>
+      <a href="#hallazgos">05 Hallazgos y decisiones</a>
+      <a href="#documentacion">Cómo documentar</a>
+      <div class="side-note"><strong>Una sesión por archivo</strong><p>Usa un código anónimo para cada participante. Exporta el JSON al terminar y conserva los archivos en el espacio autorizado del proyecto.</p></div>
+    </aside>
+
+    <main>
+      <div class="instruction-card" id="documentacion">
+        <div class="instruction-icon">i</div>
+        <div><h2>Cómo usar este formulario</h2><p>Primero completa el plan con el equipo. Después duplica o vuelve a abrir esta página para registrar <strong>una persona por sesión</strong>. Anota hechos observados y frases textuales, separándolos de tus interpretaciones. Al final, agrega hallazgos, evidencia y una acción propuesta.</p><p>Descarga el registro al terminar: las respuestas no se guardan automáticamente en el navegador. Evita nombres completos, códigos escolares, teléfonos, notas individuales, diagnósticos y otras identificaciones personales. Si participan menores, sigue las autorizaciones y reglas del establecimiento.</p></div>
+      </div>
+
+      <form id="researchForm" autocomplete="off">
+        <section class="section" id="publico">
+          <div class="section-head"><span class="step">01</span><div><h2>Público objetivo y problema</h2><p>Acuerden para quién se diseña la plataforma y qué necesidad resuelve.</p></div></div>
+          <div class="card">
+            <div class="field-grid">
+              <label>Nombre de la investigación<input name="studyName" placeholder="Ej. Validación del prototipo CNB, versión 1" /></label>
+              <label>Fecha<input name="date" type="date" /></label>
+            </div>
+            <label>Decisión que queremos tomar<textarea name="decision" rows="2" placeholder="Ej. ¿El acceso por código y la navegación son comprensibles para los estudiantes?"></textarea></label>
+            <label>Problema que hoy tiene el usuario<textarea name="userProblem" rows="2" placeholder="Describe una dificultad actual, sin proponer todavía la solución."></textarea></label>
+            <div class="field-grid">
+              <label>Público principal<select name="primaryAudience"><option value="">Selecciona</option><option>Estudiantes del establecimiento</option><option>Docentes</option><option>Personal administrativo</option><option>Otro</option></select></label>
+              <label>Contexto de uso<select name="context"><option value="">Selecciona</option><option>Estación táctil en pasillo</option><option>Estación táctil en aula</option><option>Teléfono personal</option><option>Computadora compartida</option><option>Otro</option></select></label>
+            </div>
+            <label>Usuarios secundarios y necesidades particulares<textarea name="secondaryAudience" rows="2" placeholder="Ej. docentes que publican contenido; estudiantes con poca experiencia digital; personas que necesitan letra más grande o apoyo de lectura."></textarea></label>
+            <label>Qué sabremos si la experiencia mejoró<textarea name="successSignals" rows="2" placeholder="Ej. encuentran un contenido sin ayuda, entienden el estado de sus actividades y saben volver al inicio."></textarea></label>
+          </div>
+        </section>
+
+        <section class="section" id="participantes">
+          <div class="section-head"><span class="step">02</span><div><h2>A quién preguntar</h2><p>Incluye usuarios finales y personas que administrarán la información.</p></div></div>
+          <div class="audience-grid">
+            <div class="audience"><span>01</span><h3>Estudiantes</h3><p>Son quienes usarán la estación. Incluye distintos grados, niveles de familiaridad digital y necesidades de accesibilidad.</p></div>
+            <div class="audience"><span>02</span><h3>Docentes</h3><p>Confirma cómo comparten contenidos, tareas, fechas y respuestas frecuentes.</p></div>
+            <div class="audience"><span>03</span><h3>Administración y orientación</h3><p>Valida códigos de acceso, datos, trámites, privacidad y a quién derivar consultas.</p></div>
+            <div class="audience"><span>04</span><h3>Responsables técnicos</h3><p>Revisa conectividad, mantenimiento de pantallas, actualización de contenido y soporte.</p></div>
+          </div>
+          <div class="card">
+            <label>Perfiles que faltan por escuchar y cómo los invitaremos<textarea name="recruitment" rows="2" placeholder="No entrevistar únicamente a estudiantes con facilidad tecnológica o cercanos al equipo."></textarea></label>
+            <div class="field-grid">
+              <label>Código anónimo del participante<input name="participantCode" placeholder="Ej. E-03 / D-02" /></label>
+              <label>Rol de esta persona<select name="participantRole" id="participantRole"><option value="">Selecciona</option><option value="estudiante">Estudiante</option><option value="docente">Docente</option><option value="administracion">Administración u orientación</option><option value="tecnico">Responsable técnico</option><option value="otro">Otro</option></select></label>
+              <label>Grupo o grado, si es relevante<input name="gradeBand" placeholder="Ej. ciclo básico / diversificado" /></label>
+              <label>Experiencia con herramientas digitales<select name="digitalExperience"><option value="">Selecciona</option><option>Inicial</option><option>Intermedia</option><option>Avanzada</option><option>No se preguntó</option></select></label>
+            </div>
+            <label>Condiciones observables de uso<textarea name="usageContext" rows="2" placeholder="Ej. pantalla en pasillo con ruido, luz intensa, conexión intermitente; dificultad para alcanzar controles."></textarea></label>
+            <label class="checkline"><input name="participationAuthorized" type="checkbox" /> Se confirmó la participación según las reglas del establecimiento y se explicó el propósito de la sesión.</label>
+          </div>
+        </section>
+
+        <section class="section" id="entrevista">
+          <div class="section-head"><span class="step">03</span><div><h2>Qué preguntar</h2><p>Usa preguntas abiertas sobre situaciones reales. Escucha antes de explicar la solución.</p></div></div>
+          <div class="card">
+            <div class="question-block"><strong>1. La última vez que necesitaste información de clases, tareas o fechas, ¿qué hiciste?</strong><textarea name="answerCurrentProcess" aria-label="Respuesta: proceso actual" rows="2" placeholder="Anota lo que hizo, dónde buscó y qué resultado obtuvo."></textarea></div>
+            <div class="question-block"><strong>2. ¿Qué información te cuesta encontrar o comprender? ¿Por qué?</strong><textarea name="answerPainPoints" aria-label="Respuesta: dificultades actuales" rows="2" placeholder="Registra ejemplos concretos y frases textuales."></textarea></div>
+            <div class="question-block"><strong>3. ¿En qué lugar y momento usarías una estación como esta? ¿Qué podría dificultarlo?</strong><textarea name="answerContext" aria-label="Respuesta: contexto de uso" rows="2" placeholder="Considera tiempo disponible, ruido, privacidad, conectividad y accesibilidad."></textarea></div>
+            <div class="question-block"><strong>4. Al ver la pantalla de inicio, ¿qué crees que puedes hacer aquí? ¿Qué tocarías primero?</strong><textarea name="answerFirstImpression" aria-label="Respuesta: primera impresión" rows="2" placeholder="No describas las funciones antes de escuchar la respuesta."></textarea></div>
+            <div class="question-block"><strong>5. ¿Qué palabras, iconos o pasos te resultan confusos?</strong><textarea name="answerLanguage" aria-label="Respuesta: lenguaje confuso" rows="2" placeholder="Anota el texto exacto y el lugar de la interfaz."></textarea></div>
+            <div class="question-block"><strong>6. ¿Qué cambiarías para que te resulte más fácil usarla?</strong><textarea name="answerImprovements" aria-label="Respuesta: mejoras propuestas" rows="2" placeholder="Pide que explique el problema que resolvería el cambio."></textarea></div>
+          </div>
+          <div class="role-guide" id="roleGuide" aria-live="polite"><strong>Preguntas por perfil</strong><p>Selecciona el rol del participante en la sección anterior para ver preguntas adicionales.</p></div>
+          <div class="card"><label>Respuestas a las preguntas específicas del perfil<textarea name="roleAnswers" rows="3" placeholder="Anota cada respuesta con su pregunta correspondiente."></textarea></label></div>
+        </section>
+
+        <section class="section" id="prueba">
+          <div class="section-head"><span class="step">04</span><div><h2>Prueba del prototipo</h2><p>Solicita tareas sin indicar dónde tocar. Registra qué ocurrió.</p></div></div>
+          <div class="card">
+            <p class="helper">Para cada tarea: marca el resultado, anota si necesitó ayuda y registra dónde dudó. Si el participante no realiza la tarea en su trabajo real, marca «No aplica».</p>
+            <div class="task" data-task="access"><div><strong>Acceso</strong><small>“Entra a tu espacio con este código de prueba: 12345”.</small></div><select name="taskAccess" aria-label="Resultado de la tarea Acceso"><option value="">Resultado</option><option>Lo logró sin ayuda</option><option>Lo logró con ayuda</option><option>No lo logró</option><option>No aplica</option></select></div>
+            <div class="task" data-task="content"><div><strong>Encontrar contenido</strong><small>“Busca Geometría dentro de Matemática”.</small></div><select name="taskContent" aria-label="Resultado de la tarea Encontrar contenido"><option value="">Resultado</option><option>Lo logró sin ayuda</option><option>Lo logró con ayuda</option><option>No lo logró</option><option>No aplica</option></select></div>
+            <div class="task" data-task="reading"><div><strong>Leer y completar</strong><small>“Lee la información y termina la sección”.</small></div><select name="taskReading" aria-label="Resultado de la tarea Leer y completar"><option value="">Resultado</option><option>Lo logró sin ayuda</option><option>Lo logró con ayuda</option><option>No lo logró</option><option>No aplica</option></select></div>
+            <div class="task" data-task="activities"><div><strong>Revisar actividades</strong><small>“Encuentra una actividad pendiente y su fecha”.</small></div><select name="taskActivities" aria-label="Resultado de la tarea Revisar actividades"><option value="">Resultado</option><option>Lo logró sin ayuda</option><option>Lo logró con ayuda</option><option>No lo logró</option><option>No aplica</option></select></div>
+            <div class="task" data-task="calendar"><div><strong>Usar el cronograma</strong><small>“Busca qué hay el 22 de septiembre”.</small></div><select name="taskCalendar" aria-label="Resultado de la tarea Usar el cronograma"><option value="">Resultado</option><option>Lo logró sin ayuda</option><option>Lo logró con ayuda</option><option>No lo logró</option><option>No aplica</option></select></div>
+            <div class="task" data-task="assistant"><div><strong>Pedir ayuda</strong><small>“Usa el asistente para encontrar tu progreso”.</small></div><select name="taskAssistant" aria-label="Resultado de la tarea Pedir ayuda"><option value="">Resultado</option><option>Lo logró sin ayuda</option><option>Lo logró con ayuda</option><option>No lo logró</option><option>No aplica</option></select></div>
+            <div class="task" data-task="exit"><div><strong>Salir de forma segura</strong><small>“Cierra la sesión”.</small></div><select name="taskExit" aria-label="Resultado de la tarea Salir de forma segura"><option value="">Resultado</option><option>Lo logró sin ayuda</option><option>Lo logró con ayuda</option><option>No lo logró</option><option>No aplica</option></select></div>
+            <label>Observaciones durante las tareas<textarea name="taskObservations" rows="4" placeholder="Ej. En la tarea 2 tocó 'Mis actividades' antes de 'Contenidos CNB'; necesitó ayuda para volver."></textarea></label>
+            <label>Frases textuales relevantes<textarea name="quotes" rows="3" placeholder="Escribe entre comillas las palabras de la persona, sin incluir su identidad."></textarea></label>
+            <label>¿Qué controles o textos fueron difíciles de ver, tocar, escuchar o comprender?<textarea name="accessibilityObservations" rows="2" placeholder="Describe la barrera observada, no un diagnóstico de la persona."></textarea></label>
+          </div>
+        </section>
+
+        <section class="section" id="hallazgos">
+          <div class="section-head"><span class="step">05</span><div><h2>Hallazgos y decisiones</h2><p>Une cada mejora a un hecho observado o una cita.</p></div></div>
+          <div class="card">
+            <label>Qué funcionó bien<textarea name="workedWell" rows="2" placeholder="Ej. encontró las áreas CNB sin ayuda y entendió las tarjetas por color."></textarea></label>
+            <label>Principal dificultad observada<textarea name="mainDifficulty" rows="2" placeholder="Describe el problema, no la solución."></textarea></label>
+            <label>Evidencia concreta<textarea name="evidence" rows="2" placeholder="Ej. falló la tarea de encontrar la fecha; dijo: “No sabía que debía tocar el día”."></textarea></label>
+            <div class="field-grid">
+              <label>Impacto del problema<select name="impact"><option value="">Selecciona</option><option>Alto: impide completar una tarea importante</option><option>Medio: causa demora o necesita ayuda</option><option>Bajo: genera duda pero se supera</option></select></label>
+              <label>Frecuencia observada<select name="frequency"><option value="">Selecciona</option><option>Una persona</option><option>Varias personas</option><option>Aún no se sabe</option></select></label>
+            </div>
+            <label>Cambio propuesto<textarea name="proposedChange" rows="2" placeholder="Ej. mostrar una lista visible de próximas actividades debajo del calendario."></textarea></label>
+            <div class="field-grid"><label>Responsable del seguimiento<input name="owner" placeholder="Rol o equipo, no nombre personal" /></label><label>Estado<select name="decisionStatus"><option value="">Selecciona</option><option>Por revisar</option><option>Priorizar para la siguiente versión</option><option>Probar otra solución</option><option>Resuelto</option></select></label></div>
+            <label>Cómo verificaremos la mejora<textarea name="validationPlan" rows="2" placeholder="Ej. repetir la tarea de cronograma con participantes distintos y comparar si la completan sin ayuda."></textarea></label>
+          </div>
+        </section>
+
+        <div class="actions"><button type="button" class="primary" id="exportButton">Descargar registro JSON</button><button type="button" class="secondary" id="printButton">Imprimir / guardar PDF</button><button type="reset" class="text-button">Limpiar formulario</button><p id="actionStatus" role="status" aria-live="polite"></p></div>
+      </form>
+    </main>
+  </div>
+  <script src="investigacion-usuarios.js"></script>
+</body>
+</html>
